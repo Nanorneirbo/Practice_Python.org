@@ -5,9 +5,13 @@ Your function should convert the number to a string and add commas as a thousand
 For example, calling format_number(1000000) should return "1,000,000".'''
 
 
-number_input = input("enter a number")
+number_input = int(input("enter a number"))
 
-no_0f_digits = len(number_input)
+
+
+string_input = str(number_input)
+
+no_0f_digits = len(string_input)
 
 # set up a string to check that all of the numbers are actually numbers
 actual_numbers = "0123456789"
@@ -15,12 +19,16 @@ actual_numbers = "0123456789"
 check_number = False
 
 for i in range(no_0f_digits):
-    if number_input[i] in actual_numbers:
+    if string_input[i] in actual_numbers:
         check_number = True
     else:
         check_number = False
 
-print(check_number)
+# do the sring
+if check_number == True:
+
+else:
+    print("please enter a real number")
 
 print(no_0f_digits)
 
