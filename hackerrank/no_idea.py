@@ -1,4 +1,4 @@
-'''There is an array of  integers. There are also 2 disjoint sets, A and B , each containing m integers.
+''' There is an array of n integers. There are also 2 disjoint sets, A and B , each containing m integers.
 You like all the integers in set A and dislike all the integers in set B. Your initial happiness is 0.
 For each i integer in the array, if i (element) A, you add 1 to your happiness. If i (element) B, you add -1 to your happiness.
 Otherwise, your happiness does not change. Output your final happiness at the end.
@@ -34,14 +34,12 @@ Explanation
 You gain 1 unit of happiness for elements 3 and 1 in set A. You lose 1 unit for 5 in set B.
 The element 7 in set B does not exist in the array so it is not included in the calculation.
 
-Hence, the total happiness is 2-1 = 1.'''
+Hence, the total happiness is 2-1 = 1. '''
 
-
-input_array = [3, 4, 5, 6, 7, 8]
-
-set_A = [3, 4]
-
-set_B = [1, 2]
+n, m = (input("Enter TWO numbers n (number of elements in array) and m (number of elements in each set)")).split()
+input_array = (input("Enter numbers for the array " + n + " numbers")).split()
+set_A = (input("Enter numbers for set A " + m + " numbers")).split()
+set_B = (input("Enter numbers for set B " + m + " numbers")).split()
 
 happiness = 0
 
