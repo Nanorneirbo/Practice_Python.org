@@ -36,10 +36,23 @@ The element 7 in set B does not exist in the array so it is not included in the 
 
 Hence, the total happiness is 2-1 = 1.'''
 
+
 input_array = [3, 4, 5, 6, 7, 8]
 
-set_A = {3, 4}
+set_A = [3, 4]
 
-set_B = {6, 7}
+set_B = [1, 2]
 
-print(set_A(1))
+happiness = 0
+
+for i in range(len(set_A)):
+    for j in range(len(input_array)):
+        if set_A[i] == input_array[j]:
+            happiness += 1
+
+for i in range(len(set_B)):
+    for j in range(len(input_array)):
+        if set_B[i] == input_array[j]:
+            happiness -= 1
+
+print("Happiness is", happiness)

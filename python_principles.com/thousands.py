@@ -27,39 +27,27 @@ def format_number(number):
     # do the string - first 1, 2, 3 digits
     if check_number == True:
         first_comma_position = no_0f_digits % 3
+        end_number_string = ""
+        if first_comma_position == 0:
+            first_comma_position = 3
 
         if no_0f_digits > 3:
-            if first_comma_position == 0:
-                new_string = new_string + number[0] + number[1] + number[2] + ","
-            elif first_comma_position == 1:
-                new_string = new_string + number[0] + ","
-            else:
-                new_string = new_string + number[0] + number[1] + ","
+
+            for i in range(first_comma_position):
+                new_string += number[i]
+
+            for i in range(1, no_0f_digits):
+                end_number_string += number[i + ]
 
         else:
             new_string = number
 
         # rest of the number
 
-        end_number_string = ""
 
-        #todo: change first comma position to 3 - will allow to build same loop for all three scenarios
 
-        if first_comma_position == 0:
-            no_of_commas = int(no_0f_digits/3)
-            # skip first comma
-            for i in range(1, no_of_commas):
-                end_number_string = end_number_string + number[0+(i*3)] + number[1+(i*3)] + number[2+(i*3)] + ","
-        elif first_comma_position == 1:
-            no_of_commas = int((no_0f_digits-1)/3)
-            for i in range(no_of_commas):
-                end_number_string = end_number_string + number[1+(i*3)] + number[2+(i*3)] + number[3+(i*3)] + ","
-        # first comma pos 2
-        else:
-            no_of_commas = int((no_0f_digits - 2) / 3)
-            for i in range(no_of_commas):
-                end_number_string = end_number_string + number[2 + (i * 3)] + number[3 + (i * 3)] + number[
-                    4 + (i * 3)] + ","
+
+
 
 
     else:
